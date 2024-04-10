@@ -1,0 +1,20 @@
+NFL
+SUNDAY
+time 13
+TITANS-EAGLES OVER 44 (up to 45)
+JAGS-LIONS UNDER 51 (down to 50)
+TEXANS +7 BROWNS (down to 6)
+VIKINGS -2 1/2 JETS (up to 3)
+FALCONS +1 STEELERS (up to -1)
+BRONCOS +9 1/2 RAVENS (down to 7)
+GIANTS +2 1/2 COMMANDERS (up to -1)
+
+time 16
+RAMS +7 SEAHAWKS (down to +4)
+BENGALS +2 1/2 CHIEFS (down to +1)
+
+time 20
+COLTS +10 1/2 COWBOYS (down to +10)
+
+MONDAY
+SAINTS-BUCS OVER 40 1/2 (up to 41)

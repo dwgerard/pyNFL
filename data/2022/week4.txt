@@ -1,0 +1,113 @@
+EPL
+SATURDAY
+time 0
+ARSENAL-TOTTENHAM DRAW +250 (take at +240 or higher)
+ARSENAL-TOTTENHAM UNDER 3 (take at up to –135)
+BRENTFORD-BOURNEMOUTH OVER 2 1/2 (take at up to -125)
+CYRSTAL PALACE +1/2 CHELSEA (take at up to -125)
+CRYSTAL PALACE-CHELSEA OVER 2 1/2 (take at up to -125)
+FULHAM +215 NEWCASTLE (take at +180 or higher)
+FULHAM-NEWCASTLE OVER 2 1/2 (take at up to -125)
+SOUTHAMPTON-EVERTON DRAW +250 (take at +240 or higher)
+WOLVES +1/2 WEST HAM (take at up to -125)
+WEST HAM-WOLVES UNDER 2 1/2 (take at up to -125)
+BRIGHTON +1 1/2 LIVERPOOL (take at up to -125)
+
+SUNDAY
+MAN CITY -1 1/2 MANU (take at up to -125)
+MAN CITY-MANU UNDER 3 1/2 (take at up to -125)
+LEEDS-ASTON VILLA DRAW +250 (take at +240 or higher)
+LEEDS-ASTON VILLA UNDER 2 1/2 (take at up to -125)
+
+NCAAF
+THURSDAY
+UTAH ST +24 1/2 BYU
+
+FRIDAY
+UCLA +3 WASH (take if underdog)
+UCLA +125 WASHINGTON (take at any + money as underdog)
+UCLA-WASHINGTON OVER 64 1/2 (take up to 66)
+TULANE +2 1/2 HOU (take if underdog)
+MTSU +4 UTSA (take if underdog)
+NEW MEXICO +14 1/2 UNLV (take at +14 or higher)
+
+SATURDAY
+time 12
+WISCONSIN -7 ILLINOIS (take up to 10)
+WISCONSIN-ILLINOIS OVER 43 1/2 (take up to 45)
+GEORGIA TECH +22 PITT (take at 20 or higher)
+PURDUE +12 1/2 MN (take at 10 or higher)
+PURDUE-MINNESOTA OVER 52 (take up to 56)
+TEXAS TECH +7 1/2 KANSAS ST (take at +6 or higher)
+UTAH -10 1/2 OREGON STATE (take at 11 or less)
+UTAH-OREGON STATE OVER 54 1/2 (take up to 56)
+IOWA +10 1/2 MICHIGAN (take at 10 or higher)
+NAVY-AIR FORCE OVER 37 1/2 (take up to 39)
+N. ILL-BALLSTATE UNDER 60 1/2 (take at 59 or higher)
+
+time 15
+OKST-BAYLOR UNDER 56 1/2 (take at 59 or higher)
+UNC -9 VAT (take up to 10)
+FLORIDA STATE -6 1/2 WAKE FOREST (take at 7 or less)
+MICHIGAN STATE +8 MARYLAND (take at 7 or higher)
+MICHIGAN STATE-MARYLAND OVER 58 1/2 (take up to 60)
+MICHIGAN STATE +245 MARYLAND (take at +220 or higher)
+IOWA STATE -3 KANSAS (take up to 4)
+IOWA STATE -145 KANSAS (take up to -160)
+TEXAS A&M +4 MISS. ST. (take if underdog)
+TEXAS A&M-MISSST. OVER 44 1/2 (take up to 47)
+ALA-ARK UNDER 61 (take at 59 or higher)
+CENTRAL MICHIGAN +7 1/2 TOLEDO (take at 7 or higher)
+CHARLOTTE +3 UTEP (take if underdog)
+
+time 19
+VIRGINIA +3 DUKE (take if underdog)
+ARIZONA STATE +25 1/2 USC (take at 24 or higher)
+STANFORD +17 OREGON (take at 14 or higher)
+STANFORD-OREGON OVER 62 1/2 (take up to 64)
+MISSOURI +29 GEORGIA (take at 27 or higher)
+TROY +5 WESTERN KY (take at 3 or higher)
+CINCINATTI-TULSA UNDER 58 1/2 (take up to 60)
+TEXAS -9 WEST VA (take up to 10)
+TEXAS-WEST VA UNDER 63 1/2 (take at 61 or higher)
+CLEMSON -6 1/2 NCST (take up to 7)
+COLORADO-ARIZONA OVER 56 1/2 (take up to 58)
+NEBRASKA -5 INDIANA (take up to 7)
+
+NFL
+THURSDAY
+time 8
+BENGALS TEAM TOTAL UNDER 26 1/2 (take at 26 or higher)
+
+SUNDAY
+time 13
+SAINTS +3 VIKINGS (take at +2 or higher)
+VIKINGS-SAINTS OVER 43 (take at 45 or less)
+SAINTS TEAM TOTAL OVER 20 1/2 (take at 21 or less)
+TITANS TEAM TOTAL OVER 20 (take at 21 or less)
+RAVENS +3 BILLS (take at +2 or higher)
+FALCONS +1 BROWNS (take if underdog)
+FALCONS +105 BROWNS (take if underdog)
+SEATTLE-LIONS UNDER 48 (take at 47 or higher)
+LIONS TEAM TOTAL UNDER 27 (take at 26 or higher)
+TEXANS +5 CHARGERS (take at +4 or higher)
+JAGS +6 1/2 EAGLES (take at +6 or higher)
+JAGS TEAM TOTAL OVER 20 (take at 21 or less)
+EAGLES TEAM TOTAL UNDER 27 (take at 26 or higher)
+
+time 16
+CARDINALS-PANTHERS UNDER 43 1/2 (take at 43 or higher)
+PANTHERS -115 CARDINALS (take up to -125)
+PATS-PACKERS OVER 39 1/2 (take at 44 or less)
+BRONCOS-RAIDERS OVER 45 1/2 (take up to 46)
+BRONCOS TEAM TOTAL OVER 21 (take at 21 or less)
+PATS TEAM TOTAL OVER 14 (take at 17 or less)
+
+time 20
+BUCS -105 CHIEFS (take up to -125)
+BUCS-CHIEFS OVER 45 1/2 (take up to 47)
+BUCS TEAM TOTAL OVER 23 (take up to 24)
+
+MONDAY
+RAMS-49ERS OVER 42 1/2 (take up to 44)
+49ERS -115 RAMS (take up to -125)
