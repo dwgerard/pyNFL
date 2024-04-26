@@ -1,15 +1,28 @@
 #!C:\Strawberry\perl\bin
 #
-# barnes.pl - A very hackish perl script to translate Official Picks from sportspicks.locals.com
+# barnes.pl:  A very hackish perl script to translate Official Picks from sportspicks.locals.com
 #             into a csv file.
 #
-# disclaimer- This code is presented as-is, with no warranty expressed or implied. It is intended for fun,
-#             not as a tool for wagering. The author claims no copyright or intellectual property.
-#             Use at your own risk!
+# disclaimer: This code is presented as-is, with no warranty expressed or implied. It is intended for fun,
+#             not as a tool for wagering on the outcome of sporting events. The author claims no copyright 
+#             or intellectual property. Use at your own risk and do whatever you want wit it.
 #
-# notes -     1. Not my best work :) Has evolved over time as Robert has changed his input format and added
+# setup:      Install perl. On windows I was using Strawberry. Comes with on the Mac. I use VS Code, for 
+#             this and many other things, that makes it seamless (single pane of glass as we say). It is 
+#             not required, but will be a bit of a disjointed experience without an IDE.
+#             Data files are kept in data/yyyy/xxxx.txt, output will be xxxx.csv. Note that I hard coded
+#             the year in the file open path, a venial sin just because I am very lazy about this
+#             project. It does what I need it to do, and I'm just too busy and I always hated Perl. I
+#             thought I might re-write it in Python, but that's never gonna happen cause I got too 
+#             big a Python backlog.
+#
+# incantation: barnes.pl infile (without the extension). If your input file is named 17.txt and in the
+#             correct path, "barnes.pl 17" will do it, or "perl barnes.pl 17" depending on your setup.
+#
+# notes:      1. Not my best work :) Has evolved over time as Robert has changed his input format and added
 #             bet types. Some manual editing of input required as it's not worth the effort to update. If
-#             I ever found the time I would prefer to rewrite in python.
+#             I ever found the time I would prefer to rewrite in python (but that's not gonna happen, it
+#             works just fine for me, and I've got better things to do with Python).
 #
 #             2. Originally thought to use regex, hence Perl, but the input changed a lot in the early days
 #             and it was just too hard to keep up. There are many cases where context changes due to tokens 
@@ -17,9 +30,33 @@
 #             in them. So instead, we split into an array and perse left to right, learning context as we go.
 #             Teasers are a real problem, but you will see a hack in place.  It is, quite frankly, ugly as sin.
 #
-# usage -     1. Copy and paste from sportspicks into the ./data/yyyy directory as .txt. I use week numbers
+# usage:      1. Copy and paste from sportspicks into the ./data/yyyy directory as .txt. I use week numbers
 #             corresponding to the season, but you can do whatever you want.
-#             2. Edit the txt to account for updates that haven't made it into the code
+#             2. Edit the txt to account for updates that haven't made it into the code. Follow along 
+#             in data/2023/17.txt as an example.
+#             - The first line of a new section/sport must be: LLL n, where
+#               LLL is hte league code, found in the @leagues array. Again, do as you please, but I have
+#               EPL for English Premier League, CLG for Champions League, etc. Just add to the array as
+#               Barnes adds sports, and;
+#               n is a week number, that can be different for each league. This is important as I use
+#               subototals on the week number in excel (numbers on Mac) for the weekly summary worksheet.
+#             - The next line to insert is dayname tt mm/dd/yy. Yes I am very lazy and have no data/time 
+#               logic in the code, except that the gamblinebetting week starts on Wednesday. This is important for
+#               the summary worksheet, to which I copy/paste the subtotal line in excel. More on that later.
+#             - For each new betting day, repeat the dayname tt mm/dd/yy. It's not so bad, really just takes 
+#               a couple of minutes. If you know what time the game starts, like we do in the NFL, you can 
+#               copy down the dayname tt without the date. You will see how this works once you run a sample.
+#             - You can use unique files for each sport or combine them. The code will look for one of the 
+#               @leagues entries to know to change the league code. However, in the spreadsheet I keep
+#               separate worksheet for each sport to make the subtotals simple.
+#             3. When you get a csv that looks reasonable, copy and paste it into a temporaty worksheet, use
+#             data->text to columns with the comma delimitter, and then cut/paste into the running worksheet
+#             for each sport. I do a bit of fussing around with formatting. I turn subtotals off, insert the cut
+#             rows at the top, then turn them back on.
+#
+# bugs:       1. Spaces between the plus/minus and the spread number are not handled very well. Fix manually.
+#             2. Teams with more than two words in a name can cause problems. SAN DIEGO ST is a good example.
+#             I usually just edit that to be SDSU. You can also change the spaces to underscores.
 #
 #
 #
@@ -27,7 +64,7 @@ use strict;
 use warnings;
 use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
-# League codes that makr        
+# League codes that can be updated as we get new ones       
 my @leagues = qw/EPL CLG EUR CFB NFL NBA CBB/;
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
