@@ -65,7 +65,7 @@ use warnings;
 use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
 # League codes that can be updated as we get new ones       
-my @leagues = qw/EPL CLG EUR CFB NFL NBA CBB/;
+my @leagues = qw/EPL CLG EUR CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL/;
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
@@ -76,11 +76,12 @@ my $debug = 1;
 my $lineout = "";
 my $data = "";
 my $ha = "";
-my ($league, $week, $date, $time, $team, $oppo, $contest, $type, $number, $halfpoint, $notes);
-($league, $week, $date, $time, $team, $oppo, $contest, $type, $number, $halfpoint, $notes) =
+#($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
+my ($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
 ("League", "Week", "Date", "Time", "Team", "HA", "Oppo", "Contest", "Type", "Number", " ", " ");
-print "$league,$week,$date,$time,$team,$ha,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
+print BAR "$league,$week,$date,$time,$team,$ha,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
 while  (<FOO>){
+    print "$_\n" if $debug;
     chomp();
     s/^\s+//;  
     s/\s+$//; 
@@ -91,7 +92,7 @@ while  (<FOO>){
     print "$foo[0]\n" if $debug;
     if ($foo[0] ~~ @leagues) { 
         $league = $foo[0];
-        $week = $foo[1];
+        $week = $foo[1] if $foo[1];
         print "$league $week\n" if $debug;
         next; 
     }
