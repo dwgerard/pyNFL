@@ -70,8 +70,8 @@ my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
 print "Read ./data/$file.txt Write ./data/$file.csv\n";
-open(FOO, "./data/2024/$file.txt") or die "could not open $!";
-open(BAR, ">./data/2024/$file.csv") or die "could not open $!";
+open(FOO, "./data/$file.txt") or die "could not open $!";
+open(BAR, ">./data/$file.csv") or die "could not open $!";
 my $debug = 1;
 my $lineout = "";
 my $data = "";
@@ -145,6 +145,6 @@ while  (<FOO>){
     $oppo = "$oppo " . $foo[3] if $foo[3] and $oppo ne $foo[3];
     $number = (abs($number) + $halfpoint) * $number/abs($number) if $halfpoint and
               looks_like_number($number);
-    print BAR "$league,$week,$date,$time,$team,$ha,$oppo,$contest,$type,$number,0,0,0,,$notes\n";
+    print BAR "$league,$week,$date,$time,$team,'H',$oppo,$contest,$type,$number,0,0,0,,$notes\n";
 }
 close BAR
