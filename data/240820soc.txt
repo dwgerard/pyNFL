@@ -1,0 +1,39 @@
+SOC 240820
+8/23/24
+GBL
+GLADBACH +1 -120 Leverkusen (ok to -150)
+
+8/24/24
+EPL
+BRIGHTON 0 -115 ManU (ok to -150)
+FULHAM -135 Leicester (ok to -150)
+ASTON VILLA +0.5 -115 Arsenal (ok to -150)
+NOTTINGHAM FOREST 0 -110 Southampton (ok to -150)
+SLL
+OSASUNA 0 -160 Mallorca (ok to -200)
+REAL SOCIEDAD +110 Espanyol (ok to -150)
+ISA
+ACMILAN -135 Parma (ok to -150)
+UDINESE 0 +120 Lazio (ok to -150)
+GBL
+WOLFSBURG +1.5 -150 Bayern Munich (ok to -160)
+FREIBURG 0 +145 Stuttgart (ok to -110)
+FL1
+LYON 0 -145 Monaco (ok to -150)
+LEHAVRE +0.5 -120 St. Eitenne (ok to -150)
+MONZA 0 -125 Genoa (ok to -150)
+
+8/25/24
+ISA
+NAPOLI -115 Bologna (ok to -150)
+TORINO 0 +110 Atalanta (ok to +100)
+HEIDENHEIM +0.5 -120 St Pauli (ok to -150)
+STRASBOURG +0.5 -140 Rennes (ok to -150)
+BOURNEMOUTH +0.5 -150 Newcastle (ok to -180)
+WOLVES +1 -160 Chelsea (ok to -180)
+BRENTFORD +2 -140 Liverpool (ok to -150)
+NANTES +125 Auxerre (ok to -120)
+LAS PALMAS 0 +120 Leganes (ok to +100)
+
+8/26/24
+VERONA +1 -155 Juventus (ok to -180)

@@ -65,7 +65,7 @@ use warnings;
 use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
 # League codes that can be updated as we get new ones       
-my @leagues = qw/EPL CLG EUR CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL/;
+my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ/;
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
@@ -75,11 +75,11 @@ open(BAR, ">./data/$file.csv") or die "could not open $!";
 my $debug = 1;
 my $lineout = "";
 my $data = "";
-my $ha = "";
 #($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
-my ($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
+my ($league, $week, $date, $time, $team, $hoa, $oppo, $contest, $type, $number, $halfpoint, $notes) =
 ("League", "Week", "Date", "Time", "Team", "HA", "Oppo", "Contest", "Type", "Number", " ", " ");
-print BAR "$league,$week,$date,$time,$team,$ha,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
+print BAR "$league,$week,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
+$time =10;
 while  (<FOO>){
     print "$_\n" if $debug;
     chomp();
@@ -87,27 +87,26 @@ while  (<FOO>){
     s/\s+$//; 
     next unless length; 
     ($data, $notes) = split('\(', $_); 
+    if (index(uc($data), "TEASE") != -1) {
+        ($team, $oppo, $type, $number) = ("","","TEASE",0);
+        $notes = $_;
+        print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,0,0,0,,$notes\n";
+        next;
+    }
+    $hoa = '';
     if (!defined $notes) {$notes = ' ';}
     my @foo = split(' ', $data);
     print "$foo[0]\n" if $debug;
-    if ($foo[0] ~~ @leagues) { 
-        $league = $foo[0];
-        $week = $foo[1] if $foo[1];
-        print "$league $week\n" if $debug;
-        next; 
-    }
-    my $day = first {$days[$_] eq uc($foo[0]) } 0..$#days;
-    if (defined $day) {
-        print "$date\n" if $debug;
-        if (defined $foo[1]) {
-            $time = $foo[1];
-        }
-        if (defined $foo[2]) {
-            $date = $foo[2];
-        }
+    if (split('/', $foo[0]) == 3) {
+        $date = $foo[0];
         next;
     }
-    print "$contest $oppo $halfpoint\n" if $debug;
+    if ($foo[0] ~~ @leagues) { 
+        $league = $foo[0];
+        shift @foo;
+        print "League: $league\n" if $debug;
+        next unless $foo[0];
+    }
     ($contest,$oppo,$halfpoint) = ('GAME',"",0); 
     $halfpoint = 0.5 if "1/2" ~~ @foo or "+1/2" ~~ @foo;
     if (uc($foo[0]) eq "1ST" or uc($foo[0] eq "1H")) {
@@ -116,7 +115,9 @@ while  (<FOO>){
         shift @foo if uc($foo[0]) eq "HALF";
     } 
     $team = shift(@foo);
-    if (!($foo[0] ~~ @oubets) and !(looks_like_number($foo[0]))and !($foo[0] eq '1ST')) {
+    $foo[0] = 0 if uc($foo[0]) eq 'PK';
+    $foo[1] = 0 if uc($foo[1]) eq 'PK';
+    if (!($foo[0] ~~ @oubets) and !(looks_like_number($foo[0])) and !($foo[0] eq '1ST'))  {
         print "woot $foo[0] $foo[1]\n" if $debug;
         $team = "$team " . shift(@foo) if $foo[0] ne "+1/2";
     }
@@ -139,12 +140,18 @@ while  (<FOO>){
     } else {
         print "$type\n" if $debug;
         $type = "TM_" . $type if ($type eq "OVER" or $type eq "UNDER");
-    }
-    print "$number hp $halfpoint\n" if $debug;
+    }    print "$number hp $halfpoint\n" if $debug;
     $oppo = "$oppo " . $foo[2] if $foo[2] and $foo[2] ne "1/2" and $oppo ne $foo[2];
     $oppo = "$oppo " . $foo[3] if $foo[3] and $oppo ne $foo[3];
     $number = (abs($number) + $halfpoint) * $number/abs($number) if $halfpoint and
               looks_like_number($number);
-    print BAR "$league,$week,$date,$time,$team,'H',$oppo,$contest,$type,$number,0,0,0,,$notes\n";
+    if (substr($team,0,1) eq "@") {
+        $hoa = 'H';
+        $team = substr($team,1);
+    } elsif(substr($oppo,0,1) eq "@") {
+        $hoa = 'A';
+        $oppo = substr($oppo,1);
+    }
+    print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,0,-1,,,$notes\n";
 }
 close BAR

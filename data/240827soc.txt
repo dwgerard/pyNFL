@@ -1,0 +1,34 @@
+8/27/24
+SLL VALLECANO +1 -160 Barcelona
+
+8/28/24
+CLG SLAVIA PRAGUE pk -110 Lille
+
+8/29/24
+SLL LAS PALMAS +1.5 -120 Real Madrid
+ECL PANATHINAIKOS pk -105 Lens
+ECL SERVETTE +0.75 Chelsea
+ELG HEARTS +0.5 -140 Viktoria Plzeň
+ELG SHAMROCK ROVERS +1 -130 Paok
+
+8/31/24
+SLL BILBAO pk +105 Atletico
+SLL VALENCIA pk -110 Villareal
+SLL BARCELONA -1.5 -130 Vallodolid
+ISA LAZIO pk +105 ACMilan
+FL1 TOULOUSE +0.5 -130 Marseille
+GBL MAINZ +1 -125 Stuttgart
+GBL WERDER BREMEN +1 -185 Dortmund
+EPL BRIGHTON +1.5 Arsenal
+EPL BRENTFORD -130 Southampton
+EPL EVERTON pk Bournemouth
+EPL WEST HAM +1 Man City
+EPL NEWCASTLE pk Tottenham
+
+9/1/24
+SLL GETAFE +0.5 -150 Real Sociedad
+SLL REAL BETIS +2 -185 Real Madrid
+ISA ROMA +1 -185 Juventus
+FL1 LEHAVRE pk -125 Auxerre
+GBL FREIBURG +2.5 -165 Bayern Munich
+EPL MANU +0.5 Liverpool

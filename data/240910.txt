@@ -1,0 +1,75 @@
+9/14/24
+SLL
+ESPANYOL pk -115 Alaves (ok to -130)
+REAL SOCIEDAD +1 -200 Real Madrid (ok to -220)
+EPL
+NOTTINGHAM FOREST +2 -135 Liverpool (ok to -150)
+FULHAM pk -145 West Ham (ok to -160)
+BOURNEMOUTH +0.5 -135 Chelsea (ok to -150)
+GBL
+HOFFENHEIM +1 -105 Leverkusen (ok to -130)
+WOLFSBURG pk -110 Frankfurt (ok to -130)
+GLADBACH +0.5 -165 Stuttgart (ok to -180)
+KIEL +2 -130 Bayern Munich (ok to -150)
+
+9/15/24
+EPL
+TOTTENHAM +0.5 -135 Arsenal (ok to -150)
+WOLVES +0.5 -145 Newcastle (ok to -160)
+ISA
+GENOA +0.5 -150 Roma (ok to -180)
+TORINO -125 Lecce (ok to -150)
+CAGLIARI +0.5 -105 Napoli (ok to -130)
+MONZA +1.5 -145 Inter Milan (ok to -160)
+SLL
+GIRONA +1 -185 Barcelona (ok to -200)
+VALENCIA +1.5 -130 Atletico Madrid (ok to -150)
+FL1
+STRASBOURG -135 Angers (ok to -150)
+MONTPELLIER +1 -145 Rennes (ok to -160)
+LYON +0.5 -105 Lens (ok to -130)
+
+CFB
+9/14/24
+TULSA +21 OkSt (ok to +20)
+TEXAS TECH -9.5 North Texas (ok to -9.5)
+WISCONSIN +16 Alabama (ok to +15)
+FSU -6.5 Memphis (ok to -7)
+BC +17 Missouri (ok to +16)
+TEMPLE +18 Coastal Carolina (ok to +17)
+FLORIDA +4.5 Texas A&M (ok to +4)
+OREGON ST. +17 Oregon (ok to +16)
+PITT +3 West Virginia (ok to +2)
+OKLAHOMA -13.5 Tulane (ok to -14)
+WAKE FOREST +24 Ole Miss (ok to +23)
+MISS ST. -12 Toledo (ok to -14)
+KENTUCKY +24 Georgia (ok to +23)
+UCLA +3 Indiana (ok to +2)
+
+FLORIDA +165 Texas A&M (ok to +100)
+TEMPLE +575 Coastal Carolina (ok to +400)
+UCLA +130 Indiana (ok to +100)
+VIRGINIA +115 Maryland (ok to +100)
+PITT +115 West Virginia (ok to +100)
+
+NFL
+9/15/24
+PANTHERS +6 Chargers (ok to 5)
+SAINTS +7 Cowboys (ok to 6)
+PACKERS +3.5 Colts (ok to 3)
+VIKINGS +6 49ers (ok to 5)
+PATS +4 Seattle (ok to 3)
+TITANS +4.5 Jets (ok to 4)
+CARDINALS +2.5 Rams (ok to 1)
+BENGALS +6 Chiefs (ok to 6)
+BRONCOS +3 Steelers (ok to 3)
+GIANTS-WASH UNDER 43.5 (ok to 43)
+
+9/15/24
+FALCONS +6.5 Eagles (ok to 6)
+
+SAINTS +230 Cowboys (ok to +200)
+BUCS +220 Lions (ok to +200)
+BENGALS +205 Chiefs (ok to +200)
+BRONCOS +145 Steelers (ok to +100)
+FALCONS +245 Eagles (ok to +200)
