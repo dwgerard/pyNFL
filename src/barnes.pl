@@ -79,7 +79,6 @@ my $data = "";
 my ($league, $week, $date, $time, $team, $hoa, $oppo, $contest, $type, $number, $halfpoint, $notes) =
 ("League", "Week", "Date", "Time", "Team", "HA", "Oppo", "Contest", "Type", "Number", " ", " ");
 print BAR "$league,$week,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
-$time =10;
 while  (<FOO>){
     print "$_\n" if $debug;
     chomp();
@@ -102,6 +101,9 @@ while  (<FOO>){
     }
     if ($foo[0] ~~ @leagues) { 
         $league = $foo[0];
+        $time = 9;
+        $time = 13 if $league eq "NFL";
+        $time = 12 if $league eq "CFB";
         shift @foo;
         print "League: $league\n" if $debug;
         next unless $foo[0];
