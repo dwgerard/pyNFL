@@ -93,7 +93,6 @@ while  (<FOO>){
         print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,0,0,0,,$notes\n";
         next;
     }
-    $hoa = '';
     if (!defined $notes) {$notes = ' ';}
     my @foo = split(' ', $data);
     print "$foo[0]\n" if $debug;
@@ -145,6 +144,7 @@ while  (<FOO>){
     $oppo = "$oppo " . $foo[3] if $foo[3] and $oppo ne $foo[3];
     $number = (abs($number) + $halfpoint) * $number/abs($number) if $halfpoint and
               looks_like_number($number);
+    $hoa = 'HA';
     if (substr($team,0,1) eq "@") {
         $hoa = 'H';
         $team = substr($team,1);
