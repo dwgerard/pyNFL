@@ -78,7 +78,7 @@ BESIKTAS pk -115 Frankfurt
 10/04/24
 ISA
 VERONA +100 Venezia
-Bundesliga
+GBL
 AUGSBURG pk -130 Gladbach
 10/05/24
 EPL
