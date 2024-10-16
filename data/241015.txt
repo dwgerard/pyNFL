@@ -1,0 +1,108 @@
+10/19/24
+EPL
+EVERTON pk +110 Ipswich (ok to -110)
+BOURNEMOUTH +1 -150 Arsenal (ok to -160)
+SOUTHAMPTION pk -150 Leicester (ok to -160)
+SLL
+OSASUNA pk -110 Betis (ok to -130)
+CELTA VIGO +1 -125 Real Madrid (ok to -140)
+GBL
+MAINZ +0.5 -105 Leipzig (ok to -130)
+BOCHUM +1 -140 Hoffenheim (ok to -150)
+FRANKFURT +1.5 -140 Leverkusen (ok to -150)
+STUTTGART +2 -180 Bayern Munich (ok to -190)
+FL1
+SAINT ETIENNE +1 -155 Lens (ok to -160)
+STRASBOURG +2 -165 PSG (ok to -170)
+ECH
+LUTON +100 Watford (ok to -110)
+OXFORD +0.5 -130 West Brom (ok to -140)
+BURNLEY pk -120 Sheffield Wed (ok to -130)
+STOKE pk -130 Norwich (ok to -140)
+
+10/20/24
+EPL
+WOLVES +1.5 -105 Man City (ok to -120)
+0.5% WOLVES +800 Man City (ok to +700)
+SLL
+SEVILLA +2 -160 Barcelona (ok to -170)
+English Championship
+HULL CITY pk +105 Sunderland (ok to -110)
+ISA
+JUVENTUS +100 Lazio (ok to -110)
+GENOA +0.5 -160 Bologna (ok to -170)
+EMPOLI +1 -150 Napoli (ok to -160)
+LECCE pk +115 Fiorentina (ok to -110)
+CAGLIARI pk -105 Torino (ok to -110)
+VENEZIA +1 -140 Atalanta (ok to -150)
+ROMA +0.5 -105 Inter Milan (ok to -110)
+FL1
+LEHAVRE +0.5 -135 Lyon (ok to -150)
+AUXERRE pk -120 Reims (ok to -130)
+MONTPELLIER +1 -170 Marseille (ok to -180)
+ECH
+HULL CITY pk +105 Sunderland (ok to -110)
+
+CFB
+10/18/24
+FSU +3.5 Duke (ok to +3)
+PURDUE +28 Oregon (ok to +27)
+OKST +10 BYU (ok to +8.5)
+
+10/19/24
+LOUISVILLE +4.5 Miami (ok to +4)
+COASTAL CAROLINA +3.5 Louisiana (ok to +3)
+UCLA +4.5 Rutgers (ok to +4)
+NEBRASKA +6.5 Indiana (ok to +4)
+AUBURN +4.5 Missouri (ok to +3)
+WAKE FOREST +2 UConn (ok to -1)
+UCF +14 Iowa State (ok to +13)
+WVA +3 Kansas St. (ok to +2)
+GATECH +12 Notre Dame (ok to +10)
+MICHIGAN -3 Illinois (ok to -4)
+GASTH +7 JMU (ok to +6)
+BAYLOR +6 Texas Tech (ok to +6)
+MISS ST. +15.5 Texas A&M (ok to +14)
+GEORGIA +3.5 Texas (ok to +3)
+FLORIDA +1 Kentucky (ok to -1)
+TCU +4.5 Utah (ok to +4)
+NCST +10 Cal (ok to +8.5)
+MICHST +6 Iowa (ok to +3)
+OREGONST +7 UNLV (ok to +4)
+GASTH +10 JMU (ok to +8.5)
+ALABAMA-TENNESSEE OVER 56 (ok to 57)
+OKST +260 BYU (ok to +200)
+NEBRASKA +200 Indiana (ok to +180)
+GATECH +340 Notre Dame (ok to +300)
+NCST +300 Cal (ok to +200)
+GASTH +250 JMU (ok to +200)
+UCF +425 Iowa St ( (ok to +300)
+GEORGIA +140 Texas (ok to +100)
+OREGON ST +225 UNLV (ok to +200)
+
+NFL
+10/17/24
+SAINTS +2 Broncos (ok to -1)
+
+10/20/24
+TITANS +8.5 Bills (ok to +6)
+SEATTLE-ATLANTA UNDER 51 (ok to 50)
+5% BROWNS +7 Bengals (ok to +6)
+RAIDERS +7 Rams (ok to +6)
+PANTHERS +7.5 Commanders (ok to +6)
+PANTHERS-COMMANDERS UNDER 51.5 (ok to 50)
+GIANTS +3 Eagles (ok to +2)
+49ERS -120 Chiefs (ok to -140)
+
+10/21/24
+BUCS +3.5 Ravens (ok to +3)
+CARDINALS +2.5 Chargers (ok to -1)
+BUCS +155 Ravens (ok to +100)
+CARDINALS +120 Chargers (ok to +100)
+PANTHERS +300 Commanders (ok to +200)
+
+FALCONS UNDER 27 (ok to 26)
+COMMANDERS UNDER 29 (ok to 28)
+VIKINGS UNDER 26 (ok to 26)
+JETS OVER 20 (ok to 20)
+RAVENS UNDER 26 (ok to 26)

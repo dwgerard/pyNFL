@@ -65,7 +65,7 @@ use warnings;
 use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
 # League codes that can be updated as we get new ones       
-my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ/;
+my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH/;
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
@@ -76,9 +76,9 @@ my $debug = 1;
 my $lineout = "";
 my $data = "";
 #($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
-my ($league, $week, $date, $time, $team, $hoa, $oppo, $contest, $type, $number, $halfpoint, $notes) =
-("League", "Week", "Date", "Time", "Team", "HA", "Oppo", "Contest", "Type", "Number", " ", " ");
-print BAR "$league,$week,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,Bet,Return,Net,Site,Notes\n";
+my ($league, $week, $date, $time, $team, $hoa, $oppo, $contest, $type, $number, $site, $halfpoint, $notes) =
+("League", "Week", "Date", "Time", "Team", "HA", "Oppo", "Contest", "Type", "Number", "Site", " ", " ");
+print BAR "$league,$week,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,Bet,Return,Net,$site,Notes\n";
 while  (<FOO>){
     print "$_\n" if $debug;
     chomp();
@@ -89,7 +89,7 @@ while  (<FOO>){
     if (index(uc($data), "TEASE") != -1) {
         ($team, $oppo, $type, $number) = ("","","TEASE",0);
         $notes = $_;
-        print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,0,0,0,,$notes\n";
+        print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number\n";
         next;
     }
     if (!defined $notes) {$notes = ' ';}
@@ -154,6 +154,6 @@ while  (<FOO>){
         $hoa = 'A';
         $oppo = substr($oppo,1);
     }
-    print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number,0,-1,,,$notes\n";
+    print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number\n";
 }
 close BAR
