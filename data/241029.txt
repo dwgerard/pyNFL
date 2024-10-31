@@ -1,0 +1,216 @@
+CFB
+
+11/01/2024
+
+SDST +24 Boise (ok to +23)
+
+11/02/2024
+
+SYRACUSE +3.5 Va Tech (ok to +1)
+
+ARKANSAS +6.5 Ole Miss  (ok to +3)
+
+PURDUE +2.5 Northwestern  (ok to +1)
+
+ILLINOIS +2.5 Minnesota  (ok to +1)
+
+OHIO ST -3.5 Penn St. (ok to -6)
+
+STANFORD +10.5 NC St. (ok to +10)
+
+AUBURN 5% -6.5 Vanderbilt (ok to -7)
+
+APP ST. +2 Old Dominion  (ok to +1)
+
+MICHIGAN ST. +7 Indiana (ok to +3)
+
+FSU +3 UNC  (ok to +1)
+
+FLORIDA +17 Georgia (ok to +14)
+
+TEXAS TECH +14.5 Iowa St (ok to +13)
+
+HOUSTON +13 Kansas St (ok to +10)
+
+MICHIGAN +15 Oregon (ok to +13)
+
+OKST +2.5 ASU  (ok to +1)
+
+WISCONSIN-IOWA UNDER 43 (ok to 41)
+
+KENTUCKY +14.5 Tennessee (ok to +14)
+
+SMU -7 Pitt (ok to -7) 
+
+NEVADA +1 Colorado St.  (ok to +1) 
+
+GA SOUTHERN +6 S.Alabama (ok to +3)
+
+USC -2.5 Washington (ok to -6)
+
+UCLA +7 Nebraska (ok to +6)
+
+Longshots (1% max recommended)
+
+ARKANSAS +200 Ole Miss (ok to +180)
+
+MICHIGAN ST. +215 Indiana  (ok to +180)
+
+TEXAS TECH +340 Iowa State  (ok to +180)
+
+HOUSTON +260 Kansas St  (ok to +180)
+
+ 
+
+NFL
+
+10/31/2024
+
+JETS -1 Texans (ok to -2)
+
+11/02/2024
+
+PANTHERS +7 Saints (ok to +6)
+
+DOLPHINS +6.5 Bills (ok to +6)
+
+GIANTS +3.5 Commanders (ok to +3)
+
+BROWNS +2 Chargers (ok to +1)
+
+CARDINALS -1 Bears (ok to -2)
+
+COWBOYS-FALCONS UNDER 52 (ok to 51)
+
+JAGS +7.5 Eagles (ok to +6)
+
+SEATTLE +1 Rams (ok to -1)
+
+PACKERS +3.5 Lions (ok to +3)
+
+BUCS +8.5 Chiefs (ok to +8)
+
+PACKERS +145 Lions (ok to +125)
+
+DOLPHINS +230 Bills (ok to +200)
+
+JAGS +275 Eagles (ok to +200)
+
+BUCS +350 Chiefs (ok to +300)
+
+
+10/29/2024
+
+ISA
+
+ACMILAN pk -130 Napoli (ok to -150)
+
+10/30/2024
+
+ISA
+
+MONZA +2 -190 Atalanta (ok to -200)
+
+PARMA +1.5 -135 Juventus (ok to -150)
+
+10/31/2024
+
+ISA
+
+GENOA +1 -185 Fiorentina (ok to -200)
+
+GENOA .5% +340 Fiorentina (ok to +300)
+
+COMO pk +105 Lazio (ok to -125)
+
+11/01/2024
+
+SLL
+
+ALAVES pk -150 Mallorca (ok to -175)
+
+ECL
+
+LUTON pk -140 West Brom (ok to -160)
+
+11/02/2024
+
+EPL
+
+NEWCASTLE +0.5 Arsenal (ok to -130)
+
+NEWCASTLE +280 Arsenal (ok to +250) 
+
+EVERTON pk Southampton (ok to -130)
+
+BRIGHTON +1.5 Liverpool (ok to -130)
+
+BOURNEMOUTH +1 Man City (ok to -130)
+
+BOURNEMOUTH +425 Man City (ok to +400)
+
+WOLVES pk Crystal Palace (ok to -130)
+
+ISA
+
+LECCE +1 -135 Bologna (ok to -150)
+
+UDINESE +0.5 Juventus (ok to -130)
+
+MONZA +1 -135 ACMilan (ok to -150)
+
+ECL
+
+OXFORD pk Swansea (ok to -130)
+
+PLYMOUTH +2 Leeds (ok to -130)
+
+QPR +0.5 -145 Sunderland (ok to -160)
+
+COVENTRY +1 -150 Middlesbrough (ok to -160) 
+
+CARDIFF pk Norwich (ok to -130)
+
+SLL
+
+VALENCIA +1 +105 Real Madrid (ok to -130)
+
+GBL
+
+HOFFENHEIM -115 St Pauli (ok to -130)
+
+HEIDENHEIM pk -120 Holston Kiel (ok to -130)
+
+BOCHUM +1.5 -105 Frankfurt (ok to -130)
+
+UNION BERLIN +2 -105 Bayern Munich (ok to -130)
+
+11/03/2024
+
+EPL
+
+MANU pk Chelsea (ok to -130)
+
+SLL
+
+LAS PALMAS +2 -170 Atletico Madrid (ok to -190)
+
+ESPANYOL +2.5 -125 Barcelona (ok to -130)
+
+SEVILLA pk +100 Real Sociedad (ok to -130)
+
+ECL
+
+MILWALL pk Burnley (ok to -130)
+
+FL1
+
+NANTES +0.5 -130 Marseille (ok to -150)
+
+ISA
+
+TORINO +0.5 -150 Fiorentina (ok to -160)
+
+VERONA +0.5 Roma (ok to -130)
+
+VENEZIA +2.5 -165 InterMilan (ok to -180)
