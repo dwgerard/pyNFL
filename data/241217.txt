@@ -1,0 +1,64 @@
+NFL
+12/21/24
+TEXANS OVER 19.5 (ok to 20)
+RAVENS UNDER 26.5 (ok to 26)
+
+12/22/24
+BROWNS +9 Bengals (ok to 7)
+JETS +3 Rams (ok to 1)
+COMMANDERS +3.5 Eagles (ok to 3)
+PANTHERS +5 Cardinals (ok to 3)
+TITANS +3.5 Colts (ok to 3)
+BEARS +7 Lions (ok to 4)
+GIANTS +8.5 Falcons (ok to 7)
+SEATTLE +3 Vikings (ok to 2)
+PATS +14.5 Bills (ok to 14)
+MIAMI +1 49ers (ok to -1)
+RAIDERS -1 Jags (ok to -2)
+COWBOYS +4 Bucs (ok to 3)
+LIONS UNDER 28.5 (ok to 28)
+BENGALS UNDER 28.5 (ok to 28)
+COMMANDERS OVER 20.5 (ok to 21)
+JETS OVER 20.5 (ok to 21)
+FALCONS UNDER 26.5 (ok to 26)
+CARDINALS UNDER 26.5 (ok to 26)
+COLTS UNDER 23.5 (ok to 23)
+BILLS UNDER 30.5 (ok to 28)
+DOLPHINS-49ERS OVER 43 (ok to 45)
+BUCS UNDER 26.5 (ok to 26)
+
+12/23/24
+SAINTS +14.5 Packers (ok to 14)
+PACKERS UNDER 28.5 (ok to 28)
+SAINTS OVER 13.5 (ok to 14)
+
+12/25/24
+STEELERS +2.5 Chiefs (ok to 2)
+
+12/26/24
+BEARS +1.5 Seattle (ok to 1)
+
+SOCCER
+12/21/24
+EPL
+PALACE +1 +105 Arsenal (ok to -125)
+SLL
+OSASUNA +0.5 Bilbao (ok to -125)
+
+12/22/24
+EPL
+EVERTON +1 Chelsea (ok to -125)
+MANU -125 Bournemouth
+WOLVES pk LEICESTER (ok to -125)
+TOTTENHAM +0.5 Liverpool (ok to -125)
+SLL
+LAS PALMAS -115 Espanyol (ok to -125)
+ISA
+GENOA +1 Napoli (ok to -150)
+LECCE +1 Lazio (ok to -150)
+MONZA +1 -150 Juventus (ok to -150)
+
+12/23/24
+ISA
+UDINESE +1 Fiorentina (ok to -150)
+COMO +2 Inter Milan (ok to -150)

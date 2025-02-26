@@ -1,0 +1,71 @@
+NFL
+12/28/24
+PATS +4 Chargers (ok to 3)
+CARDINALS +6.5 Rams (ok to 6)
+BENGALS-BRONCOS UNDER 49.5 (ok to 49)
+
+12/29/24
+GIANTS +7.5 Colts (ok to 7)
+GIANTS +340 Colts (ok to +300)
+SAINTS +1 Raiders (ok to 0)
+JETS +9.5 Bills (ok to 8)
+JETS +360 Bills (ok to +300)
+PANTHERS-BUCS UNDER 48.5 (ok to 48)
+BROWNS +6.5 Dolphins (ok to 6)
+
+12/30/24
+49ERS +3.5 Lions (ok to 3)
+49ERS +154 Lions (ok to +140)
+
+
+CFB
+
+12/27/24
+WASH ST +17 Syracuse (ok to 17)
+WASH ST +575 Syracuse (ok to +500)
+USC +4 Texas A&M (ok to 3)
+USC +150 A&M (ok to +130)
+LA TECH +525 Army (ok to +500)
+
+12/29/24
+BYU +3.5 Colorado (ok to 3)
+
+12/30/24
+IOWA +3 Missouri (ok to 3)
+
+12/31/24
+WASHINGTON +2.5 Louisville (ok to 2)
+ILLINOIS +9 South Carolina (ok to 8)
+
+1/1/25
+GEORGIA-5% -125 Notre Dame (ok to -150)
+OHIO ST. -135 Oregon (ok to -150)
+
+12/28/24
+ISA
+CAGLIARI +1.5 -150 Inter Milan (ok to -185)
+LAZIO pk +105 Atalanta (ok to -125)
+
+12/29/24
+EPL
+PALACE -1 Southampton (ok to -160)
+EVERTON pk Forest (ok to -160)
+FULHAM pk Bournemouth (ok to -160)
+WEST HAM +1.5 Liverpool (ok to -160)
+ECL
+STOKE +0.5 -160 Sunderland (ok to -165)
+DERBY +1 -130 Leeds (ok to -160)
+WEST BROM +0.5 -130 Sheffield U (ok to -160)
+LUTON +0.5 -150 Swansea (ok to -160)
+
+12/30/24
+EPL
+MANU pk Newcastle (ok to -160)
+IPSWICH +1.5 Chelsea (ok to -160)
+ISA
+LECCE +1 -170 Como (ok to -180)
+VERONA +1.5 -185 Bologna (ok to -190)
+
+1/1/25
+EPL
+BRENTFORD +1.5 -170 Arsenal (ok to -180)

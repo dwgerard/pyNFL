@@ -64,15 +64,28 @@ use strict;
 use warnings;
 use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
+use Time::Piece;
 # League codes that can be updated as we get new ones       
-my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF/;
+my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF PROP/;
+my %leaguel = ("ITALY SERIE A", "ISA", 
+                "GERMAN BUNDESLIGA", "GBL",
+                 "FRENCH LIGUE 1", "FL1",
+                 "SPAIN LA LIGA", "SLL",
+                 "SPANISH LA LIGA", "SLL",
+                 "ENGLISH CHAMPIONSHIP", "ECL",
+                 "ENGLISH PREMIER LEAGUE", "EPL",
+                 "CHAMPIONS LEAGUE", "CLG",
+                 "CONFERENCE LEAGUE", "ECF",
+                 "EUROPE CONFERENCE LEAGUE", "ECF",
+                 "EUROPA LEAGUE", "EUR"
+                ) ;
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
 print "Read ./data/$file.txt Write ./data/$file.csv\n";
 open(FOO, "./data/$file.txt") or die "could not open $!";
 open(BAR, ">./data/$file.csv") or die "could not open $!";
-my $debug = 1;
+my $debug = 0;
 my $lineout = "";
 my $data = "";
 #($league, $week, $date, $time, $team, $ha, $oppo, $contest, $type, $number, $halfpoint, $notes) =
@@ -93,67 +106,140 @@ while  (<FOO>){
         next;
     }
     if (!defined $notes) {$notes = ' ';}
-    my @foo = split(' ', $data);
-    print "$foo[0]\n" if $debug;
-    if (split('/', $foo[0]) == 3) {
-        $date = $foo[0];
+    if (my $blah = $leaguel{$data}) {
+        $league = $blah;
+        if ($league ~~ @leagues) { 
+            #$league = $foo[0];
+            $time = "9:0:0";
+            $time = "13:00:00" if $league eq "NFL";
+            $time = "12:00:00" if $league eq "CFB";
+            print "League: $league\n" if $debug;
+            next;
+        }
+    }
+
+    # Split the string into components
+    if ($data =~ /(\w+),\s+(\w+)\s+(\d+),\s+(\d{4})/) {
+        my ($day, $month, $day_of_month, $year) = (uc($1), uc($2), $3, $4);
+
+        # Convert to Time::Piece object
+        my $time = Time::Piece->strptime("$day_of_month $month $year", "%d %B %Y");
+
+        # Format the date as mm/dd/yy
+        $date = $time->strftime("%m/%d/%y");
+
+        print "Time at the tone: $date\n";
         next;
     }
-    if ($foo[0] ~~ @leagues) { 
-        $league = $foo[0];
-        $time = 9;
-        $time = 13 if $league eq "NFL";
-        $time = 12 if $league eq "CFB";
-        shift @foo;
-        print "League: $league\n" if $debug;
-        next unless $foo[0];
+    # print "$foo[0]\n" if $debug;
+    # if ($foo[0] ~~ @days) {
+    #     my $dt = Time::Piece->strptime($data, '%b %e %T %Y');
+    #     print "Time at the tone: $dt->strftime('%d-%m-%Y')";
+    # }
+    print "$data\n";
+    my @foo = split(' ', $data);
+    # if (split('/', $foo[0]) == 3) {
+    #     $date = $foo[0];
+    #     next;
+    # }
+    if ($foo[0] eq "PROP") {
+        $contest = $foo[0]; 
+        $team = shift @foo;
+        until ($foo[0] ~~ @oubets) {
+            $team = $team . ' ' . shift @foo;
+        }
+        $type = shift @foo;
+        $number = shift @foo;
+        $oppo = shift @foo;
+        while (@foo) {
+            $oppo = $oppo . ' ' . shift @foo;
+        }
+        $time = "13:00:00";
     }
-    ($contest,$oppo,$halfpoint) = ('GAME',"",0); 
-    $halfpoint = 0.5 if "1/2" ~~ @foo or "+1/2" ~~ @foo;
-    if (uc($foo[0]) eq "1ST" or uc($foo[0] eq "1H")) {
-        $contest = "HALF_1";
-        shift @foo; 
-        shift @foo if uc($foo[0]) eq "HALF";
-    } 
-    $team = shift(@foo);
-    $foo[0] = 0 if uc($foo[0]) eq 'PK';
-    $foo[1] = 0 if uc($foo[1]) eq 'PK';
-    if (!($foo[0] ~~ @oubets) and !(looks_like_number($foo[0])) and !($foo[0] eq '1ST'))  {
-        print "woot $foo[0] $foo[1]\n" if $debug;
-        $team = "$team " . shift(@foo) if $foo[0] ne "+1/2";
+    if ($foo[0]) {
+        ($contest,$oppo,$halfpoint) = ('GAME',"",0); 
+        $halfpoint = 0.5 if "1/2" ~~ @foo or "+1/2" ~~ @foo;
+        if (uc($foo[0]) eq "1ST" or uc($foo[0] eq "1H")) {
+            $contest = "HALF_1";
+            shift @foo; 
+            shift @foo if uc($foo[0]) eq "HALF";
+        } 
+        $team = shift(@foo);
+        print "T: $team\n";
+        print "F0: $foo[0]\n";
+        $foo[0] = 0 if uc($foo[0]) eq 'PK';
+        $foo[1] = 0 if uc($foo[1]) eq 'PK';
+        if (!($foo[0] ~~ @oubets) and !(looks_like_number($foo[0])) and !($foo[0] eq '1ST'))  {
+            print "woot $foo[0] $foo[1]\n" if $debug;
+            $team = "$team " . shift(@foo) if $foo[0] ne "+1/2";
+        }
+        if ($foo[0] eq '1ST') {
+            $contest = "HALF_1";
+            shift @foo; 
+            shift @foo if uc($foo[0]) eq "HALF";
+        } 
+        if ($foo[0] ~~ @oubets) { 
+            ($type, $number) = ($foo[0], $foo[1]);
+            $oppo = $foo[2] if $foo[2]; #and $foo[2] ne "1/2" and $foo[2] ne "+1/2";
+        } else {
+            print "notou $foo[0] $foo[1]\n" if $debug;
+            ($type, $number, $oppo) = ("SPREAD", $foo[0], $foo[1]);
+            $type = "MONEY" if looks_like_number($number) and abs($number) >= 100;
+        }
+        my @bar = split ('-', $team);
+        if ($bar[1] and $bar[0] ne "EX") {
+            ($team, $oppo) = ($bar[0], $bar[1]);
+        } else {
+            print "$type\n" if $debug;
+            $type = "TM_" . $type if ($type eq "OVER" or $type eq "UNDER");
+        }    print "$number hp $halfpoint\n" if $debug;
+        $oppo = "$oppo " . $foo[2] if $foo[2] and $foo[2] ne "1/2" and $oppo ne $foo[2];
+        $oppo = "$oppo " . $foo[3] if $foo[3] and $oppo ne $foo[3];
+        $number = (abs($number) + $halfpoint) * $number/abs($number) if $halfpoint and
+                looks_like_number($number);
+        $hoa = 'HA';
+        if (substr($team,0,1) eq "@") {
+            $hoa = 'H';
+            $team = substr($team,1);
+        } elsif(substr($oppo,0,1) eq "@") {
+            $hoa = 'A';
+            $oppo = substr($oppo,1);
+        }
     }
-    if ($foo[0] eq '1ST') {
-        $contest = "HALF_1";
-        shift @foo; 
-        shift @foo if uc($foo[0]) eq "HALF";
-    } 
-    if ($foo[0] ~~ @oubets) { 
-        ($type, $number) = ($foo[0], $foo[1]);
-        $oppo = $foo[2] if $foo[2]; #and $foo[2] ne "1/2" and $foo[2] ne "+1/2";
-    } else {
-        print "notou $foo[0] $foo[1]\n" if $debug;
-        ($type, $number, $oppo) = ("SPREAD", $foo[0], $foo[1]);
-        $type = "MONEY" if looks_like_number($number) and abs($number) >= 100;
-    }
-    my @bar = split ('-', $team);
-    if ($bar[1] and $bar[0] ne "EX") {
-        ($team, $oppo) = ($bar[0], $bar[1]);
-    } else {
-        print "$type\n" if $debug;
-        $type = "TM_" . $type if ($type eq "OVER" or $type eq "UNDER");
-    }    print "$number hp $halfpoint\n" if $debug;
-    $oppo = "$oppo " . $foo[2] if $foo[2] and $foo[2] ne "1/2" and $oppo ne $foo[2];
-    $oppo = "$oppo " . $foo[3] if $foo[3] and $oppo ne $foo[3];
-    $number = (abs($number) + $halfpoint) * $number/abs($number) if $halfpoint and
-              looks_like_number($number);
-    $hoa = 'HA';
-    if (substr($team,0,1) eq "@") {
-        $hoa = 'H';
-        $team = substr($team,1);
-    } elsif(substr($oppo,0,1) eq "@") {
-        $hoa = 'A';
-        $oppo = substr($oppo,1);
-    }
+    #cat if ($league eq "PROP") {$league = "NFL"}
     print BAR "$league,$file,$date,$time,$team,$hoa,$oppo,$contest,$type,$number\n";
 }
-close BAR
+close BAR;
+
+# Function to convert day name to a number (0 for Monday, 6 for Sunday)
+sub day_name_to_number {
+    my %day_to_number = (
+        'MONDAY'    => 0,
+        'TUESDAY'   => 1,
+        'WEDNESDAY' => 2,
+        'THURSDAY'  => 3,
+        'FRIDAY'    => 4,
+        'SATURDAY'  => 5,
+        'SUNDAY'    => 6
+    );
+    return $day_to_number{uc($_[0])};
+}
+
+# Function to convert month name to number (1 for January, 12 for December)
+sub month_name_to_number {
+    my %month_to_number = (
+        'JANUARY'   => 1,
+        'FEBRUARY'  => 2,
+        'MARCH'     => 3,
+        'APRIL'     => 4,
+        'MAY'       => 5,
+        'JUNE'      => 6,
+        'JULY'      => 7,
+        'AUGUST'    => 8,
+        'SEPTEMBER' => 9,
+        'OCTOBER'   => 10,
+        'NOVEMBER'  => 11,
+        'DECEMBER'  => 12
+    );
+    return $month_to_number{uc($_[0])};
+}
