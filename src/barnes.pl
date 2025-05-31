@@ -66,7 +66,7 @@ use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
 use Time::Piece;
 # League codes that can be updated as we get new ones       
-my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF PROP/;
+my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA MLB CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF CDR MLS PROP/;
 my %leaguel = ("ITALY SERIE A", "ISA", 
                 "GERMAN BUNDESLIGA", "GBL",
                  "FRENCH LIGUE 1", "FL1",
@@ -77,8 +77,14 @@ my %leaguel = ("ITALY SERIE A", "ISA",
                  "CHAMPIONS LEAGUE", "CLG",
                  "CONFERENCE LEAGUE", "ECF",
                  "EUROPE CONFERENCE LEAGUE", "ECF",
-                 "EUROPA LEAGUE", "EUR"
+                 "EUROPA CONFERENCE LEAGUE", "ECF",
+                 "EUROPA LEAGUE", "EUR",
+                 "ITALY COPPA ITALIA","ICP",
+                 "SPAIN COPA DEL REY","CDR",
+                 "USA MLS", "MLS",
+                 "USA MAJOR LEAGUE SOCCER", "MLS"
                 ) ;
+my $mtype = "MONEY";  # DWG hack to distingush MONEY vs. ADVANCE
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
@@ -99,6 +105,10 @@ while  (<FOO>){
     s/\s+$//; 
     next unless length; 
     ($data, $notes) = split('\(', $_); 
+    if (index(uc($data), "ADVANCE") != -1) { #ADVANCE hack
+        $mtype = "ADVANCE";
+        next;
+    }
     if (index(uc($data), "TEASE") != -1) {
         ($team, $oppo, $type, $number) = ("","","TEASE",0);
         $notes = $_;
@@ -108,15 +118,22 @@ while  (<FOO>){
     if (!defined $notes) {$notes = ' ';}
     if (my $blah = $leaguel{$data}) {
         $league = $blah;
-        if ($league ~~ @leagues) { 
-            #$league = $foo[0];
-            $time = "9:0:0";
-            $time = "13:00:00" if $league eq "NFL";
-            $time = "12:00:00" if $league eq "CFB";
-            print "League: $league\n" if $debug;
-            next;
-        }
+        next;
     }
+    if ($data ~~ @leagues) {
+        $league = $data;
+        next;
+    }
+    $time = "12:0:0";
+    # if ($league ~~ @leagues) { 
+    #     #$league = $foo[0];
+    #     $time = "9:0:0";
+    #     $time = "13:00:00" if $league eq "NFL";
+    #     $time = "12:00:00" if $league eq "CFB";
+    #     print "League: $league\n" if $debug;
+    #     next;
+    # }
+
 
     # Split the string into components
     if ($data =~ /(\w+),\s+(\w+)\s+(\d+),\s+(\d{4})/) {
@@ -131,20 +148,11 @@ while  (<FOO>){
         print "Time at the tone: $date\n";
         next;
     }
-    # print "$foo[0]\n" if $debug;
-    # if ($foo[0] ~~ @days) {
-    #     my $dt = Time::Piece->strptime($data, '%b %e %T %Y');
-    #     print "Time at the tone: $dt->strftime('%d-%m-%Y')";
-    # }
     print "$data\n";
     my @foo = split(' ', $data);
-    # if (split('/', $foo[0]) == 3) {
-    #     $date = $foo[0];
-    #     next;
-    # }
     if ($foo[0] eq "PROP") {
-        $contest = $foo[0]; 
-        $team = shift @foo;
+        $contest = shift @foo; 
+        $team ='';
         until ($foo[0] ~~ @oubets) {
             $team = $team . ' ' . shift @foo;
         }
@@ -163,6 +171,9 @@ while  (<FOO>){
             $contest = "HALF_1";
             shift @foo; 
             shift @foo if uc($foo[0]) eq "HALF";
+        } 
+        if (uc($foo[0]) eq "1ST5") {
+            $contest = shift @foo; 
         } 
         $team = shift(@foo);
         print "T: $team\n";
@@ -184,7 +195,7 @@ while  (<FOO>){
         } else {
             print "notou $foo[0] $foo[1]\n" if $debug;
             ($type, $number, $oppo) = ("SPREAD", $foo[0], $foo[1]);
-            $type = "MONEY" if looks_like_number($number) and abs($number) >= 100;
+            $type = $mtype if looks_like_number($number) and abs($number) >= 100;
         }
         my @bar = split ('-', $team);
         if ($bar[1] and $bar[0] ne "EX") {
