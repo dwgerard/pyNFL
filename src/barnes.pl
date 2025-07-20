@@ -66,7 +66,7 @@ use Scalar::Util qw(looks_like_number);
 use List::Util qw(first);
 use Time::Piece;
 # League codes that can be updated as we get new ones       
-my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA MLB CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF CDR MLS PROP/;
+my @leagues = qw/SOC EPL CLG EUR ENL CFB NFL NBA MLB CBB ICP FL1 SLL GBL ISA ELG ECL EFA FCP WCQ ECH ECF CDR MLS FCC PROP/;
 my %leaguel = ("ITALY SERIE A", "ISA", 
                 "GERMAN BUNDESLIGA", "GBL",
                  "FRENCH LIGUE 1", "FL1",
@@ -84,7 +84,7 @@ my %leaguel = ("ITALY SERIE A", "ISA",
                  "USA MLS", "MLS",
                  "USA MAJOR LEAGUE SOCCER", "MLS"
                 ) ;
-my $mtype = "MONEY";  # DWG hack to distingush MONEY vs. ADVANCE
+#my $mtype = "MONEY";  # DWG hack to distingush MONEY vs. ADVANCE
 my @oubets = qw/OVER UNDER DRAW SCORE TEASER/;
 my @days = qw/WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY MONDAY TUESDAY/;
 my $file = $ARGV[0];
@@ -106,7 +106,9 @@ while  (<FOO>){
     next unless length; 
     ($data, $notes) = split('\(', $_); 
     if (index(uc($data), "ADVANCE") != -1) { #ADVANCE hack
-        $mtype = "ADVANCE";
+        ($team, $type, $number) = split(' ', $data);
+        print BAR "$league,$file,$date,$time,$team,$hoa,,$contest,$type,$number\n";
+        #$mtype = "ADVANCE";
         next;
     }
     if (index(uc($data), "TEASE") != -1) {
@@ -195,7 +197,7 @@ while  (<FOO>){
         } else {
             print "notou $foo[0] $foo[1]\n" if $debug;
             ($type, $number, $oppo) = ("SPREAD", $foo[0], $foo[1]);
-            $type = $mtype if looks_like_number($number) and abs($number) >= 100;
+            #$type = $mtype if looks_like_number($number) and abs($number) >= 100;
         }
         my @bar = split ('-', $team);
         if ($bar[1] and $bar[0] ne "EX") {
