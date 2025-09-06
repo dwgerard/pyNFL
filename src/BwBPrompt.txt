@@ -20,7 +20,7 @@ output
 					If not found use 01/01/01
 			Time:
 				Use value found from internet search above
-				Format: convert to duration HH:MM.0
+				Format: convert to duration HH:MM:0
 			Team:
 				Convert from input (type match) into canonical form
 					NFL: City name and mascot
