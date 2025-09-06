@@ -1,0 +1,91 @@
+BWB Prompt
+task
+	process as psuedo-yaml file
+	generate a csv to track sports bets from non-structured input
+output
+	csv
+		header
+			League,Week,Date,Time,Team,HA,Oppo,Contest,Type,Number
+		columns
+			League - copy from input type League
+			Week - derive from input type Date
+				Value: Latest Tuesday prior to Date
+				Format: yymmdd
+			Date: copy from input type Date
+				Format: mm/dd/yy
+				Validation
+					May be plus or minus 1 or even two days
+					Search on web to validate
+					Use value found on web if input incorrect
+					If not found use 01/01/01
+			Time:
+				Use value found from internet search above
+				Format: convert to duration HH:MM.0
+			Team:
+				Convert from input (type match) into canonical form
+					NFL: City name and mascot
+					CFB: School name and mascot
+			HA: 
+				If Value Team is at home, then H, else A
+			Oppo:
+				Convert from input (type match) into canonical form
+			Contest:
+				Derive from input input type Match
+				Rules
+					If absolute value of number is less than 100 then “SPREAD”
+					else “MONEY”
+			Type:
+				Derive from input type Match
+				Default: “GAME”
+			Number:
+				Copy from input type Match
+input file description
+	there will be 3 different types of rows
+		type Date
+			Date of the matches in subsequest rows
+		type League
+			league of the matches in subsequest rows
+		type Match
+			contains one or both teams in a Match, the bet type, the line at which we want to place the bet, and optionally the worst line at which we will place the bet, “OK TO”
+			format
+				space delimitted
+				ignore data following first “(“
+				format1
+					team line oppo
+input file follows
+SATURDAY, SEPTEMBER 6, 2025
+NCAAF
+KENTST +49 TEXAS TECH (OK TO +48)
+IOWA +3.5 IOST (OK TO +3)
+IOWA +150 IOST (OK TO +130)
+SYR -6.5 UCONN (OK TO -7)
+NCST -3 UVA (OK TO -3)
+DUKE +3 ILLINOIS (OK TO +3)
+DUKE +130 ILLINOIS (OK TO +130)
+CMICH +23 PITT (OK TO +23)
+UTST +32.5 TEXAS A&M (OK TO +31)
+KY +10 OLE MISS (OK TO +8.5)
+KY +300 OLE MISS (OK TO +200)
+SALA +13.5 TULANE (OK TO +13)
+SALA +310 TULANE (OK TO +300)
+SMU -2.5 BAYLOR (OK TO -3)
+KS +6.5 MO (OK TO 3)
+KS +200 MO (OK TO +180)
+COLORADO -23 DELAWARE (OK TO -24)
+ORST -1.5 FRESNO (OK TO -3)
+OKST +28.5 OREG (OK TO +28)
+WVA -3 OHIO (OK TO -3)
+USF +18.5 FLORIDA (OK TO +17)
+RICE +14 HOUSTON (OK TO +13)
+RUTGERS -13.5 MIAOH (OK TO -14)
+MISST +6.5 ASU (OK TO +6)
+1% MISST +200 ASU (OK TO +180)
+VAT -1.5 VANDY (OK TO -3)
+MICHIGAN +5.5 OK (OK TO +4)
+STANFORD +21 BYU (OK TO +20)
+WASHST -1 SDST (OK TO -3)
+NEWMEXST +4 TULSA (OK TO +3)
+HAWAII -6.5 SHST (OK TO -7)
+
+
+#Grok
