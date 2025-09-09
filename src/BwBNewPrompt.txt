@@ -1,0 +1,40 @@
+Updated instructions:
+```yaml
+task
+  process as pseudo-yaml file
+  generate a csv to track sports bets from non-structured input
+output
+  csv
+    header
+      League,Week,Date,Time,Team,HA,Oppo,Contest,Type,Number
+    columns
+      League: copy from input type League
+      Week: derive from input type Date
+        Value: Latest Tuesday prior to Date
+        Format: yymmdd
+      Date: copy from input type Date
+        Format: mm/dd/yy
+      Time: use value from web search, format as HH:MM:0, convert to eastern time
+      Team: convert to canonical form (NFL/MLB: city name and mascot; NCAAF: school name and mascot)
+      HA: H if Team is home, else A
+      Oppo: convert to canonical form
+      Contest: default to GAME
+      Type: for format1, SPREAD if |number| < 100, else MONEY; for format2, use input type (OVER, UNDER, PLAYER_PROP)
+      Number: copy from input; for OVER/UNDER types, use numerical value only
+input file description
+  type Date: date of matches
+  type League: league of matches
+  type Match
+    format1: team line oppo
+    format2: team-oppo type line
+    format3: player team-oppo type line (new for player props)
+input file follows
+Monday, September 8, 2025
+
+MLB
+ATL -105 CUBS (ok to -120 or 55%)
+CIN +120 SD (ok to +100 or 50%)
+
+NFL
+BEARS +1.5 MN (ok to +1)
+BEARS-MN UNDER 43.5 (ok to 43)

@@ -24,21 +24,25 @@ output
 			Team:
 				Convert from input (type match) into canonical form
 					NFL: City name and mascot
-					CFB: School name and mascot
+                    MLB: City name and mascot
+					NCAAF: School name and mascot
 			HA: 
 				If Value Team is at home, then H, else A
 			Oppo:
 				Convert from input (type match) into canonical form
-			Contest:
-				Derive from input input type Match
-				Rules
-					If absolute value of number is less than 100 then “SPREAD”
-					else “MONEY”
-			Type:
+            Contest:
 				Derive from input type Match
 				Default: “GAME”
 			Number:
 				Copy from input type Match
+			Type:
+				Derive from input type Match
+				Rules
+                    format1
+                        If absolute value of number is less than 100 then “SPREAD”
+                        else “MONEY”
+                    format2
+                        value of type
 input file description
 	there will be 3 different types of rows
 		type Date
@@ -50,42 +54,36 @@ input file description
 			format
 				space delimitted
 				ignore data following first “(“
-				format1
-					team line oppo
+            format1
+                team line oppo
+            format2
+                team-oppo type line
 input file follows
-SATURDAY, SEPTEMBER 6, 2025
-NCAAF
-KENTST +49 TEXAS TECH (OK TO +48)
-IOWA +3.5 IOST (OK TO +3)
-IOWA +150 IOST (OK TO +130)
-SYR -6.5 UCONN (OK TO -7)
-NCST -3 UVA (OK TO -3)
-DUKE +3 ILLINOIS (OK TO +3)
-DUKE +130 ILLINOIS (OK TO +130)
-CMICH +23 PITT (OK TO +23)
-UTST +32.5 TEXAS A&M (OK TO +31)
-KY +10 OLE MISS (OK TO +8.5)
-KY +300 OLE MISS (OK TO +200)
-SALA +13.5 TULANE (OK TO +13)
-SALA +310 TULANE (OK TO +300)
-SMU -2.5 BAYLOR (OK TO -3)
-KS +6.5 MO (OK TO 3)
-KS +200 MO (OK TO +180)
-COLORADO -23 DELAWARE (OK TO -24)
-ORST -1.5 FRESNO (OK TO -3)
-OKST +28.5 OREG (OK TO +28)
-WVA -3 OHIO (OK TO -3)
-USF +18.5 FLORIDA (OK TO +17)
-RICE +14 HOUSTON (OK TO +13)
-RUTGERS -13.5 MIAOH (OK TO -14)
-MISST +6.5 ASU (OK TO +6)
-1% MISST +200 ASU (OK TO +180)
-VAT -1.5 VANDY (OK TO -3)
-MICHIGAN +5.5 OK (OK TO +4)
-STANFORD +21 BYU (OK TO +20)
-WASHST -1 SDST (OK TO -3)
-NEWMEXST +4 TULSA (OK TO +3)
-HAWAII -6.5 SHST (OK TO -7)
+Sunday, September 7, 2025
+2% max recommended unless otherwise noted.
 
+MLB
+TOR +130 NYY (ok to +100 or 50%)
+BAL +135 LAD (ok to +100 or 50%)
+MN +110 KC (ok to +100 or 50%)
+LAA +105 ATH (ok to +100 or 50%)
+ARI -105 BOS (ok to -120 or 55%)
 
-#Grok
+NFL
+NYJ +3 PIT (ok to +3)
+NYG +6.5 WASH (ok to +6)
+1% NYG +225 WASH (ok to +200)
+CLE +5.5 CIN (ok to +4.5)
+CLE-CIN UNDER 48.5 (ok to 47.5)
+NO +6.5 ARI (ok to +6)
+PIT-NYJ OVER 37.5 (ok to 38.5)
+LVR +2.5 NE (ok to +2)
+1% LVR +125 NE (ok to +120)
+TN +8.5 DEN (ok to +7.5)
+1% TN +350 DEN (ok to +300)
+TN-DEN UNDER 42.5 (ok to 42)
+HOU-LAR OVER 43.5 (ok to 44)
+HOU +3.5 LAR (ok to +3)
+TB-ATL UNDER 47.5 (ok to 47)
+GB -1.5 DET (ok to -2.5)
+BUF +1.5 BAL (ok to -1)
